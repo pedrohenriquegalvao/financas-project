@@ -1,24 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="financas_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-FINANCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPt-rH-MDp">
+                                <rect key="frame" x="128" y="165" width="158" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="vwF-F4-uoK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCn-No-VMv">
+                                <rect key="frame" x="0.0" y="825" width="414" height="71"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moeda" translatesAutoresizingMaskIntoConstraints="NO" id="03F-Qo-lQF">
+                                        <rect key="frame" x="161" y="-23" width="92" height="64"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29680719152411134" green="0.50588238240000005" blue="0.22438831611885293" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="03F-Qo-lQF" secondAttribute="trailing" constant="161" id="QSm-xg-9fY"/>
+                                    <constraint firstAttribute="bottom" secondItem="03F-Qo-lQF" secondAttribute="bottom" constant="30" id="hBp-q0-jnm"/>
+                                    <constraint firstItem="03F-Qo-lQF" firstAttribute="top" secondItem="iCn-No-VMv" secondAttribute="top" constant="-23" id="lva-od-BNx"/>
+                                    <constraint firstItem="03F-Qo-lQF" firstAttribute="leading" secondItem="iCn-No-VMv" secondAttribute="leading" constant="161" id="qn2-ne-22f"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insira seu nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dvo-r3-i6F">
+                                <rect key="frame" x="93" y="443" width="228" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insira seu CPF" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2cF-Wd-Xo9">
+                                <rect key="frame" x="93" y="499" width="228" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnS-6T-0Yc">
+                                <rect key="frame" x="93" y="557" width="228" height="32"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Entrar">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <color key="baseBackgroundColor" red="0.29803922770000002" green="0.50588238240000005" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não possui cadastro?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8b-Rz-Pb4">
+                                <rect key="frame" x="125" y="608" width="164" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oud-BY-dgQ">
+                                <rect key="frame" x="145" y="625" width="124" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="CADASTRE-SE">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                                    <color key="baseForegroundColor" red="0.13483765525180383" green="0.61432828608247425" blue="0.15137753440896143" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="s13-YL-Kva">
+                                <rect key="frame" x="38" y="231" width="338" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="DkX-pk-4DC"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nPt-rH-MDp" secondAttribute="trailing" constant="128" id="0h7-4o-nNa"/>
+                            <constraint firstItem="2cF-Wd-Xo9" firstAttribute="top" secondItem="Dvo-r3-i6F" secondAttribute="bottom" constant="22" id="1ah-jf-lvr"/>
+                            <constraint firstItem="s13-YL-Kva" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="2Nl-sx-50u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2cF-Wd-Xo9" secondAttribute="trailing" constant="93" id="3xo-mC-GhG"/>
+                            <constraint firstItem="S8b-Rz-Pb4" firstAttribute="top" secondItem="ZnS-6T-0Yc" secondAttribute="bottom" constant="19" id="4uO-jq-Wdb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oud-BY-dgQ" secondAttribute="trailing" constant="145" id="6Jj-aG-keI"/>
+                            <constraint firstItem="s13-YL-Kva" firstAttribute="centerX" secondItem="nPt-rH-MDp" secondAttribute="centerX" id="9Rm-R4-ODU"/>
+                            <constraint firstItem="ZnS-6T-0Yc" firstAttribute="top" secondItem="2cF-Wd-Xo9" secondAttribute="bottom" constant="24" id="9zr-4E-wDs"/>
+                            <constraint firstItem="Dvo-r3-i6F" firstAttribute="top" secondItem="s13-YL-Kva" secondAttribute="bottom" constant="22" id="GDm-Ox-orM"/>
+                            <constraint firstItem="2cF-Wd-Xo9" firstAttribute="top" secondItem="Dvo-r3-i6F" secondAttribute="bottom" constant="22" id="Isk-nV-uG0"/>
+                            <constraint firstItem="iCn-No-VMv" firstAttribute="top" secondItem="oud-BY-dgQ" secondAttribute="bottom" constant="169" id="KbI-BW-B5z"/>
+                            <constraint firstItem="2cF-Wd-Xo9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="93" id="Mnd-5n-pVz"/>
+                            <constraint firstItem="S8b-Rz-Pb4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="PS3-cu-qwG"/>
+                            <constraint firstItem="Dvo-r3-i6F" firstAttribute="top" secondItem="s13-YL-Kva" secondAttribute="bottom" constant="22" id="PTP-mc-JFz"/>
+                            <constraint firstAttribute="bottom" secondItem="iCn-No-VMv" secondAttribute="bottom" id="RyF-QH-epx"/>
+                            <constraint firstItem="s13-YL-Kva" firstAttribute="top" secondItem="nPt-rH-MDp" secondAttribute="bottom" constant="30" id="SPy-bc-jVl"/>
+                            <constraint firstItem="ZnS-6T-0Yc" firstAttribute="top" secondItem="2cF-Wd-Xo9" secondAttribute="bottom" constant="24" id="Sf6-fS-RDc"/>
+                            <constraint firstItem="nPt-rH-MDp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="121" id="UTF-e1-dTI"/>
+                            <constraint firstItem="iCn-No-VMv" firstAttribute="top" secondItem="S8b-Rz-Pb4" secondAttribute="bottom" constant="196" id="Ubp-L3-dxH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZnS-6T-0Yc" secondAttribute="trailing" constant="93" id="Uih-Lt-PGe"/>
+                            <constraint firstItem="s13-YL-Kva" firstAttribute="centerX" secondItem="2cF-Wd-Xo9" secondAttribute="centerX" id="WJ6-pb-c7N"/>
+                            <constraint firstItem="iCn-No-VMv" firstAttribute="top" secondItem="oud-BY-dgQ" secondAttribute="bottom" constant="169" id="Wv4-CC-oRy"/>
+                            <constraint firstItem="oud-BY-dgQ" firstAttribute="top" secondItem="ZnS-6T-0Yc" secondAttribute="bottom" constant="36" id="XF9-AM-8Ej"/>
+                            <constraint firstItem="s13-YL-Kva" firstAttribute="centerX" secondItem="S8b-Rz-Pb4" secondAttribute="centerX" id="Yfg-Vb-zS2"/>
+                            <constraint firstItem="ZnS-6T-0Yc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="93" id="ZXd-Tm-eeT"/>
+                            <constraint firstItem="s13-YL-Kva" firstAttribute="centerX" secondItem="oud-BY-dgQ" secondAttribute="centerX" id="afX-Pe-Qmd"/>
+                            <constraint firstItem="Dvo-r3-i6F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="93" id="bov-EG-UVY"/>
+                            <constraint firstItem="s13-YL-Kva" firstAttribute="centerX" secondItem="iCn-No-VMv" secondAttribute="centerX" id="c0r-kt-Wxu"/>
+                            <constraint firstItem="iCn-No-VMv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iNY-06-aY6"/>
+                            <constraint firstItem="s13-YL-Kva" firstAttribute="centerX" secondItem="ZnS-6T-0Yc" secondAttribute="centerX" id="pPN-18-zoJ"/>
+                            <constraint firstItem="nPt-rH-MDp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="128" id="sPP-9W-UIi"/>
+                            <constraint firstItem="S8b-Rz-Pb4" firstAttribute="top" secondItem="ZnS-6T-0Yc" secondAttribute="bottom" constant="19" id="u3l-aN-YqQ"/>
+                            <constraint firstItem="s13-YL-Kva" firstAttribute="centerX" secondItem="Dvo-r3-i6F" secondAttribute="centerX" id="vNJ-4y-3Uk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dvo-r3-i6F" secondAttribute="trailing" constant="93" id="va9-rJ-6Di"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S8b-Rz-Pb4" secondAttribute="trailing" constant="125" id="yWP-SM-4LK"/>
+                            <constraint firstItem="iCn-No-VMv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zQd-zC-1kT"/>
+                            <constraint firstItem="oud-BY-dgQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="145" id="zlk-wc-IcG"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="68.973214285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="moeda" width="4096" height="4096"/>
+        <image name="money" width="1400" height="1400"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
