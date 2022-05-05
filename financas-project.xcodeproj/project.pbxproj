@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9601C25F28235A7500218923 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601C25E28235A7500218923 /* CadastroViewController.swift */; };
+		9601C26128235A8900218923 /* ControleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601C26028235A8900218923 /* ControleViewController.swift */; };
 		9687C17D281B6D1C0024724F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687C17C281B6D1C0024724F /* AppDelegate.swift */; };
 		9687C17F281B6D1C0024724F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687C17E281B6D1C0024724F /* SceneDelegate.swift */; };
 		9687C181281B6D1C0024724F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687C180281B6D1C0024724F /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9601C25E28235A7500218923 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		9601C26028235A8900218923 /* ControleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControleViewController.swift; sourceTree = "<group>"; };
 		9687C179281B6D1C0024724F /* financas-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "financas-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9687C17C281B6D1C0024724F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9687C17E281B6D1C0024724F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,15 +60,33 @@
 		9687C17B281B6D1C0024724F /* financas-project */ = {
 			isa = PBXGroup;
 			children = (
+				96B7666928235928004FACB2 /* Model */,
+				96B76664282356CE004FACB2 /* Controller */,
 				9687C17C281B6D1C0024724F /* AppDelegate.swift */,
 				9687C17E281B6D1C0024724F /* SceneDelegate.swift */,
-				9687C180281B6D1C0024724F /* ViewController.swift */,
 				9687C182281B6D1C0024724F /* Main.storyboard */,
 				9687C185281B6D1F0024724F /* Assets.xcassets */,
 				9687C187281B6D1F0024724F /* LaunchScreen.storyboard */,
 				9687C18A281B6D1F0024724F /* Info.plist */,
 			);
 			path = "financas-project";
+			sourceTree = "<group>";
+		};
+		96B76664282356CE004FACB2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9687C180281B6D1C0024724F /* ViewController.swift */,
+				9601C25E28235A7500218923 /* CadastroViewController.swift */,
+				9601C26028235A8900218923 /* ControleViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		96B7666928235928004FACB2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +162,9 @@
 			files = (
 				9687C181281B6D1C0024724F /* ViewController.swift in Sources */,
 				9687C17D281B6D1C0024724F /* AppDelegate.swift in Sources */,
+				9601C26128235A8900218923 /* ControleViewController.swift in Sources */,
 				9687C17F281B6D1C0024724F /* SceneDelegate.swift in Sources */,
+				9601C25F28235A7500218923 /* CadastroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
