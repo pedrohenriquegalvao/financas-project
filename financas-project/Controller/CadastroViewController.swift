@@ -19,7 +19,7 @@ class CadastroViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        createTable()
+        SQLiteCommands.createTable()
         nomeTextField.becomeFirstResponder()
         cpfTextField.delegate = self
         

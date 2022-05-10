@@ -19,12 +19,15 @@ class SQLiteCommands {
     static let email = Expression<String>("email") 
     
     static func createTable() {
+        
         guard let database = SQLiteDatabase.sharedInstance.database
             else {
                 print("Datastore connection error")
             return
         }
         do {
+            
+            
             try database.run(table.create(ifNotExists: true) { table in
                 
                 table.column(idUsuario, primaryKey: true)
@@ -32,7 +35,7 @@ class SQLiteCommands {
                 table.column(cpf, unique: true)
                 table.column(dataNascimento)
                 table.column(email, unique: true)
-
+                print("Tabela criada")
             })
         } catch {
             print("A tabela ja existe: \(error)")
@@ -61,6 +64,7 @@ class SQLiteCommands {
         }
     }
     static func presentRows() -> [Usuario]? {
+        print("AASAASFEWCEEWVWEWVWCSDCDSCSDC")
         guard let database = SQLiteDatabase.sharedInstance.database else {
             print("Datastore connection error")
             return nil
