@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		9601C25F28235A7500218923 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601C25E28235A7500218923 /* CadastroViewController.swift */; };
 		9601C26128235A8900218923 /* ControleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601C26028235A8900218923 /* ControleViewController.swift */; };
+		9660A72D282A9667006F12C3 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660A72C282A9667006F12C3 /* Usuario.swift */; };
+		9660A796282A9D11006F12C3 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 9660A795282A9D11006F12C3 /* SQLite */; };
+		9660A799282A9DBA006F12C3 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660A798282A9DBA006F12C3 /* SQLiteDatabase.swift */; };
+		9660A79C282AA0AE006F12C3 /* SQLiteCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660A79B282AA0AE006F12C3 /* SQLiteCommands.swift */; };
+		9660A79F282AAF71006F12C3 /* CadatroUsuarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660A79E282AAF71006F12C3 /* CadatroUsuarioViewModel.swift */; };
 		9687C17D281B6D1C0024724F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687C17C281B6D1C0024724F /* AppDelegate.swift */; };
 		9687C17F281B6D1C0024724F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687C17E281B6D1C0024724F /* SceneDelegate.swift */; };
 		9687C181281B6D1C0024724F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9687C180281B6D1C0024724F /* ViewController.swift */; };
@@ -17,10 +22,27 @@
 		9687C189281B6D1F0024724F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9687C187281B6D1F0024724F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9660A763282A9B53006F12C3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9601C25E28235A7500218923 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		9601C26028235A8900218923 /* ControleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControleViewController.swift; sourceTree = "<group>"; };
-		9687C179281B6D1C0024724F /* financas-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "financas-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9660A72C282A9667006F12C3 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		9660A798282A9DBA006F12C3 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
+		9660A79B282AA0AE006F12C3 /* SQLiteCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteCommands.swift; sourceTree = "<group>"; };
+		9660A79E282AAF71006F12C3 /* CadatroUsuarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadatroUsuarioViewModel.swift; sourceTree = "<group>"; };
+		9687C179281B6D1C0024724F /* financas-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "financas-project.app"; path = "/Users/pedrohenrique/PUC/Terceiro Semestre/Disp. Moveis/Swift/financas-project/build/Debug-iphoneos/financas-project.app"; sourceTree = "<absolute>"; };
 		9687C17C281B6D1C0024724F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9687C17E281B6D1C0024724F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9687C180281B6D1C0024724F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,31 +57,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9660A796282A9D11006F12C3 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9660A79A282A9E88006F12C3 /* SQLiteDatasource */ = {
+			isa = PBXGroup;
+			children = (
+				9660A798282A9DBA006F12C3 /* SQLiteDatabase.swift */,
+				9660A79B282AA0AE006F12C3 /* SQLiteCommands.swift */,
+			);
+			path = SQLiteDatasource;
+			sourceTree = "<group>";
+		};
+		9660A79D282AAF4A006F12C3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9660A79E282AAF71006F12C3 /* CadatroUsuarioViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		9687C170281B6D1C0024724F = {
 			isa = PBXGroup;
 			children = (
 				9687C17B281B6D1C0024724F /* financas-project */,
-				9687C17A281B6D1C0024724F /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		9687C17A281B6D1C0024724F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9687C179281B6D1C0024724F /* financas-project.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		9687C17B281B6D1C0024724F /* financas-project */ = {
 			isa = PBXGroup;
 			children = (
+				9660A79D282AAF4A006F12C3 /* ViewModel */,
+				9660A79A282A9E88006F12C3 /* SQLiteDatasource */,
 				96B7666928235928004FACB2 /* Model */,
 				96B76664282356CE004FACB2 /* Controller */,
 				9687C17C281B6D1C0024724F /* AppDelegate.swift */,
@@ -85,6 +118,7 @@
 		96B7666928235928004FACB2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9660A72C282A9667006F12C3 /* Usuario.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,12 +133,16 @@
 				9687C175281B6D1C0024724F /* Sources */,
 				9687C176281B6D1C0024724F /* Frameworks */,
 				9687C177281B6D1C0024724F /* Resources */,
+				9660A763282A9B53006F12C3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "financas-project";
+			packageProductDependencies = (
+				9660A795282A9D11006F12C3 /* SQLite */,
+			);
 			productName = "financas-project";
 			productReference = 9687C179281B6D1C0024724F /* financas-project.app */;
 			productType = "com.apple.product-type.application";
@@ -133,7 +171,10 @@
 				Base,
 			);
 			mainGroup = 9687C170281B6D1C0024724F;
-			productRefGroup = 9687C17A281B6D1C0024724F /* Products */;
+			packageReferences = (
+				9660A794282A9D11006F12C3 /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
+			productRefGroup = 9687C170281B6D1C0024724F;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -162,9 +203,13 @@
 			files = (
 				9687C181281B6D1C0024724F /* ViewController.swift in Sources */,
 				9687C17D281B6D1C0024724F /* AppDelegate.swift in Sources */,
+				9660A72D282A9667006F12C3 /* Usuario.swift in Sources */,
+				9660A79F282AAF71006F12C3 /* CadatroUsuarioViewModel.swift in Sources */,
+				9660A79C282AA0AE006F12C3 /* SQLiteCommands.swift in Sources */,
 				9601C26128235A8900218923 /* ControleViewController.swift in Sources */,
 				9687C17F281B6D1C0024724F /* SceneDelegate.swift in Sources */,
 				9601C25F28235A7500218923 /* CadastroViewController.swift in Sources */,
+				9660A799282A9DBA006F12C3 /* SQLiteDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +425,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9660A794282A9D11006F12C3 /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9660A795282A9D11006F12C3 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9660A794282A9D11006F12C3 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9687C171281B6D1C0024724F /* Project object */;
 }

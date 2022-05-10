@@ -112,6 +112,9 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
                                     <color key="baseForegroundColor" red="0.13483765525180383" green="0.61432828608247425" blue="0.15137753440896143" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="D0b-JF-jIR" kind="show" id="Eg9-Kp-w2k"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="s13-YL-Kva">
                                 <rect key="frame" x="38" y="231" width="338" height="190"/>
@@ -180,10 +183,10 @@
             </objects>
             <point key="canvasLocation" x="1703" y="69"/>
         </scene>
-        <!--View Controller-->
+        <!--Controle View Controller-->
         <scene sceneID="aXj-Aw-ufk">
             <objects>
-                <viewController id="VYF-77-Puv" sceneMemberID="viewController">
+                <viewController id="VYF-77-Puv" customClass="ControleViewController" customModule="financas_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" ambiguous="YES" id="49t-pX-zJ9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -419,16 +422,16 @@
             </objects>
             <point key="canvasLocation" x="2450.7246376811595" y="68.973214285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Cadastro View Controller-->
         <scene sceneID="0aQ-46-gs6">
             <objects>
-                <viewController id="D0b-JF-jIR" sceneMemberID="viewController">
+                <viewController id="D0b-JF-jIR" customClass="CadastroViewController" customModule="financas_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D6Q-Ni-din">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UlV-yd-uiR">
-                                <rect key="frame" x="0.0" y="825" width="414" height="71"/>
+                                <rect key="frame" x="0.0" y="825" width="414" height="17"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moeda" translatesAutoresizingMaskIntoConstraints="NO" id="qeg-gi-m6k">
                                         <rect key="frame" x="161" y="-23" width="92" height="64"/>
@@ -461,6 +464,9 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
                                     <color key="baseBackgroundColor" red="0.29803922770000002" green="0.50588238240000005" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="cadastrarButton:" destination="D0b-JF-jIR" eventType="touchUpInside" id="EvS-WP-phh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gdq-uP-YHh">
                                 <rect key="frame" x="153" y="721" width="108" height="31"/>
@@ -530,6 +536,13 @@
                             <constraint firstItem="cOe-G0-Xt3" firstAttribute="centerX" secondItem="D6Q-Ni-din" secondAttribute="centerX" id="unM-U6-hyH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7nN-b4-Dxb"/>
+                    <connections>
+                        <outlet property="cpfTextField" destination="5mk-WQ-L2G" id="MUw-ip-xwZ"/>
+                        <outlet property="dataNascimentoTextField" destination="GkX-dF-fKa" id="Ol2-SG-nJ1"/>
+                        <outlet property="emailTextField" destination="HA8-fR-Iv8" id="FXL-Cw-tnb"/>
+                        <outlet property="nomeTextField" destination="9Yc-Jj-8PK" id="V61-Z3-x8r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ae-Fo-KAM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
