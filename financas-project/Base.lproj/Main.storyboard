@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="financas_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-FINANCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPt-rH-MDp">
@@ -88,7 +88,8 @@
                                     <color key="baseBackgroundColor" red="0.29803922770000002" green="0.50588238240000005" blue="0.2235293984" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="VYF-77-Puv" kind="show" id="heO-2D-eqZ"/>
+                                    <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ghh-gh-Ngo"/>
+                                    <segue destination="VYF-77-Puv" kind="show" identifier="LoginParaControle" id="heO-2D-eqZ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não possui cadastro?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8b-Rz-Pb4">
@@ -178,6 +179,11 @@
                             <constraint firstItem="oud-BY-dgQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="145" id="zlk-wc-IcG"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cj7-we-e3d"/>
+                    <connections>
+                        <outlet property="cpfTextField" destination="2cF-Wd-Xo9" id="KFy-oR-yYx"/>
+                        <outlet property="nomeTextField" destination="Dvo-r3-i6F" id="AQq-Z6-HVo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,12 +193,12 @@
         <scene sceneID="aXj-Aw-ufk">
             <objects>
                 <viewController id="VYF-77-Puv" customClass="ControleViewController" customModule="financas_project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="49t-pX-zJ9">
+                    <view key="view" contentMode="scaleToFill" id="49t-pX-zJ9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHf-dN-C63">
-                                <rect key="frame" x="0.0" y="825" width="414" height="71"/>
+                                <rect key="frame" x="0.0" y="771" width="414" height="71"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moeda" translatesAutoresizingMaskIntoConstraints="NO" id="iyq-sc-DjD">
                                         <rect key="frame" x="161" y="-23" width="4096" height="4096"/>
@@ -216,18 +222,16 @@
                                     <constraint firstItem="lkz-Xr-kS7" firstAttribute="leading" secondItem="dHf-dN-C63" secondAttribute="leading" constant="161" id="tbD-JS-3J0"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaY-vO-JgS">
-                                <rect key="frame" x="147" y="84" width="121" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="121" id="DN1-q8-bWz"/>
-                                    <constraint firstAttribute="height" constant="36" id="JXe-vJ-tis"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONTAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaY-vO-JgS">
+                                <rect key="frame" x="147" y="70" width="121" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIM-ah-0hV">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIM-ah-0hV">
                                 <rect key="frame" x="66" y="197" width="282" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BANCO INTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufJ-FA-Tzq">
                                         <rect key="frame" x="8" y="8" width="128" height="24"/>
@@ -252,13 +256,10 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.11838853371912378" green="0.96249079090515466" blue="0.0" alpha="0.11115539965986394" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="78" id="U2k-jA-o1V"/>
-                                    <constraint firstAttribute="width" constant="282" id="o7a-z4-c8d"/>
-                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Tc-is-jtC">
-                                <rect key="frame" x="66" y="301" width="282" height="81"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Tc-is-jtC">
+                                <rect key="frame" x="66" y="283" width="282" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BANCO DO BRASIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fk1-JM-EP8">
                                         <rect key="frame" x="8" y="8" width="172" height="24"/>
@@ -283,13 +284,9 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.9098039269" green="0.99215686319999996" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="282" id="NZK-xw-tHf"/>
-                                    <constraint firstAttribute="height" constant="81" id="fqe-Qk-v8f"/>
-                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESPESAS FIXAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDI-vC-x48">
-                                <rect key="frame" x="85" y="383" width="242" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DESPESAS FIXAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDI-vC-x48">
+                                <rect key="frame" x="85" y="379" width="242" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="242" id="dWK-jG-ZBS"/>
                                     <constraint firstAttribute="height" constant="36" id="jzo-ju-hId"/>
@@ -298,8 +295,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gKb-07-2h9">
-                                <rect key="frame" x="85" y="427" width="242" height="340"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gKb-07-2h9">
+                                <rect key="frame" x="85" y="423" width="242" height="340"/>
                                 <color key="backgroundColor" red="0.5139717613" green="0.87778154480000004" blue="0.38918823019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="242" id="3No-hj-Gjw"/>
@@ -387,7 +384,7 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZC-PA-jWe">
-                                <rect key="frame" x="141" y="149" width="131" height="31"/>
+                                <rect key="frame" x="141" y="141" width="131" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Adicionar Conta "/>
@@ -395,37 +392,34 @@
                                     <segue destination="xe1-l5-yRf" kind="show" id="z6F-KH-Bca"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDf-Hp-VdR">
+                                <rect key="frame" x="121" y="33" width="172" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pCJ-ZD-p2y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dHf-dN-C63" firstAttribute="trailing" secondItem="pCJ-ZD-p2y" secondAttribute="trailing" id="2Mr-wM-v6Y"/>
-                            <constraint firstItem="9Tc-is-jtC" firstAttribute="top" secondItem="eIM-ah-0hV" secondAttribute="bottom" constant="37" id="3ii-ba-fKB"/>
                             <constraint firstItem="gKb-07-2h9" firstAttribute="leading" secondItem="pCJ-ZD-p2y" secondAttribute="leading" constant="85" id="4H3-1d-a9H"/>
                             <constraint firstItem="pCJ-ZD-p2y" firstAttribute="trailing" secondItem="gKb-07-2h9" secondAttribute="trailing" constant="87" id="6Kb-bC-OQh"/>
                             <constraint firstItem="SDI-vC-x48" firstAttribute="leading" secondItem="pCJ-ZD-p2y" secondAttribute="leading" constant="85" id="90e-O5-Fo9"/>
-                            <constraint firstItem="eIM-ah-0hV" firstAttribute="top" secondItem="XaY-vO-JgS" secondAttribute="bottom" constant="26" id="9Ul-8r-25D"/>
-                            <constraint firstItem="pCJ-ZD-p2y" firstAttribute="trailing" secondItem="9Tc-is-jtC" secondAttribute="trailing" constant="66" id="Bxk-nf-uWT"/>
                             <constraint firstItem="dHf-dN-C63" firstAttribute="top" secondItem="gKb-07-2h9" secondAttribute="bottom" constant="58" id="Frw-Cm-V5F"/>
                             <constraint firstItem="dHf-dN-C63" firstAttribute="top" secondItem="gKb-07-2h9" secondAttribute="bottom" constant="58" id="Jhr-qS-An9"/>
-                            <constraint firstItem="eIM-ah-0hV" firstAttribute="top" secondItem="XaY-vO-JgS" secondAttribute="bottom" constant="26" id="Jyh-OX-yWJ"/>
-                            <constraint firstItem="9Tc-is-jtC" firstAttribute="leading" secondItem="pCJ-ZD-p2y" secondAttribute="leading" constant="66" id="Lsr-nk-A9J"/>
-                            <constraint firstItem="SDI-vC-x48" firstAttribute="top" secondItem="9Tc-is-jtC" secondAttribute="bottom" constant="41" id="MNc-mG-eIS"/>
-                            <constraint firstItem="eIM-ah-0hV" firstAttribute="leading" secondItem="pCJ-ZD-p2y" secondAttribute="leading" constant="66" id="PMO-fK-hCa"/>
                             <constraint firstAttribute="bottom" secondItem="dHf-dN-C63" secondAttribute="bottom" id="RLk-D2-v8A"/>
                             <constraint firstItem="gKb-07-2h9" firstAttribute="top" secondItem="SDI-vC-x48" secondAttribute="bottom" constant="8" symbolic="YES" id="Taj-YV-FPw"/>
-                            <constraint firstItem="XaY-vO-JgS" firstAttribute="leading" secondItem="pCJ-ZD-p2y" secondAttribute="leading" constant="147" id="Tm3-2g-w6N"/>
                             <constraint firstItem="gKb-07-2h9" firstAttribute="top" secondItem="SDI-vC-x48" secondAttribute="bottom" constant="8" symbolic="YES" id="USQ-Yv-ZzM"/>
-                            <constraint firstItem="pCJ-ZD-p2y" firstAttribute="trailing" secondItem="XaY-vO-JgS" secondAttribute="trailing" constant="146" id="VH0-AV-WbG"/>
-                            <constraint firstItem="SDI-vC-x48" firstAttribute="top" secondItem="9Tc-is-jtC" secondAttribute="bottom" constant="41" id="ckW-8J-LIj"/>
-                            <constraint firstItem="9Tc-is-jtC" firstAttribute="top" secondItem="eIM-ah-0hV" secondAttribute="bottom" constant="37" id="dL3-2T-k7c"/>
-                            <constraint firstItem="XaY-vO-JgS" firstAttribute="top" secondItem="pCJ-ZD-p2y" secondAttribute="top" constant="40" id="dug-nq-31a"/>
                             <constraint firstItem="pCJ-ZD-p2y" firstAttribute="trailing" secondItem="SDI-vC-x48" secondAttribute="trailing" constant="87" id="koq-Cu-tr7"/>
                             <constraint firstItem="dHf-dN-C63" firstAttribute="leading" secondItem="pCJ-ZD-p2y" secondAttribute="leading" id="llj-bq-R2j"/>
-                            <constraint firstItem="pCJ-ZD-p2y" firstAttribute="trailing" secondItem="eIM-ah-0hV" secondAttribute="trailing" constant="66" id="tvl-m4-2EX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pzT-tD-rzW"/>
+                    <connections>
+                        <outlet property="nomeLabel" destination="ZDf-Hp-VdR" id="2Rb-Lo-jal"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VqA-ON-fum" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -534,6 +528,9 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
                                     <color key="baseForegroundColor" red="0.1348376553" green="0.61432828610000001" blue="0.15137753440000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="L4X-sx-coj"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Já possui cadastro?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3a8-gQ-3lu">
                                 <rect key="frame" x="132" y="704" width="150" height="21"/>

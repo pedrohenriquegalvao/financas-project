@@ -8,10 +8,20 @@
 import UIKit
 
 class ControleViewController: UIViewController {
-
+    var nome: String?
+    var cpf: String?
+    
+    @IBOutlet weak var nomeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        var dados = SQLiteCommands.filtra(cpf: cpf ?? "")
+        do {
+           try nomeLabel.text = dados?.get(SQLiteCommands.nomeUsuario) ?? ""
+        } catch {
+            nomeLabel.text = "Nome padrao"
+        }
        
+        
         
         // Do any additional setup after loading the view.
     }

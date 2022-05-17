@@ -95,6 +95,44 @@ class SQLiteCommands {
         return usuarioArray
     }
     
+    static func filtra(cpf:String) -> Row? {
+        print("ALOHA")
+        do {
+            print("CU")
+
+            let query = SQLiteCommands.tableUsuario.filter(SQLiteCommands.cpf == cpf)
+            print(query.asSQL())
+            var data = try SQLiteDatabase.sharedInstance.database!.pluck(query)
+            print(data ?? "")
+            print(try data?.get(nomeUsuario) ?? "")
+            return data
+            
+        } catch {
+            print("Get by Id Error : (error)")
+            return nil
+            
+        }
+        
+    }
+    
+    static func deleteRowsUsuario(){
+        print("DELETE CHAMADO")
+        
+        guard let database = SQLiteDatabase.sharedInstance.database
+            else {
+                print("Datastore connection error")
+            return
+        }
+        
+        do {
+            try database.run(tableUsuario.limit(3).delete())
+            print("LINHA DELETADA")
+        }catch {
+            print(error)
+        }
+        
+    }
+    
     
     //-MARK: TABELA CONTABANCARIA
     
@@ -154,14 +192,17 @@ class SQLiteCommands {
     
     static func presentRowsConta() -> [ContaBancaria]? {
         print("pppppppppppppppp")
+    
         guard let database = SQLiteDatabase.sharedInstance.database else {
             print("Datastore connection error")
             return nil
         }
+        
         var contaArray = [ContaBancaria]()
         tableConta = tableConta.order(idConta.desc)
         print("ooooooooooooooooooo")
         do {
+            print("CAIU")
             for conta in try database.prepare(tableConta) {
                 let idContaValue = conta[idConta]
                 let idUsuarioFKValue = conta[idUsuarioFK]
@@ -180,6 +221,7 @@ class SQLiteCommands {
         }
         return contaArray
     }
+    
     
     
     

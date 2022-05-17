@@ -24,6 +24,8 @@ class CadastroViewController: UIViewController {
         cpfTextField.delegate = self
         
         SQLiteCommands.presentRows()
+        //SQLiteCommands.deleteRowsUsuario()
+        //SQLiteCommands.presentRows()
     }
     
 
