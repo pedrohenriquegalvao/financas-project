@@ -9,15 +9,13 @@ import Foundation
 
 class Usuario {
     
-    internal init(idUsuario: Int, nomeUsuario: String, cpf: String, dataNascimento: String, email: String) {
-        self.idUsuario = idUsuario
+    internal init(nomeUsuario: String, cpf: String, dataNascimento: String, email: String) {
         self.nomeUsuario = nomeUsuario
         self.cpf = cpf
         self.dataNascimento = dataNascimento
         self.email = email
     }
     
-    let idUsuario: Int
     var nomeUsuario: String
     let cpf: String
     let dataNascimento: String

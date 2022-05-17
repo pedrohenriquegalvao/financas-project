@@ -38,13 +38,12 @@ class CadastroViewController: UIViewController {
     }
     
     @IBAction func cadastrarButton(_ sender: Any) {
-        let idUsuario: Int = 0
         let nomeUsuario = nomeTextField.text ?? ""
         let cpf = cpfTextField.text ?? ""
         let dataNascimento = dataNascimentoTextField.text ?? ""
         let email = emailTextField.text ?? ""
         
-        let usuarioValues = Usuario(idUsuario: idUsuario, nomeUsuario: nomeUsuario, cpf: cpf, dataNascimento: dataNascimento, email: email)
+        let usuarioValues = Usuario(nomeUsuario: nomeUsuario, cpf: cpf, dataNascimento: dataNascimento, email: email)
         
         cadastrarUsuario(usuarioValues)
         

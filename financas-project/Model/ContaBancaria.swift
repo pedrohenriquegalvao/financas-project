@@ -7,15 +7,15 @@
 
 import Foundation
 class ContaBancaria {
-    internal init(idConta: Int, idUsuarioFK: Int, nomeBanco: String, numConta: Int) {
+    internal init(idConta: Int, cpfUsuarioFK: String, nomeBanco: String, numConta: Int) {
         self.idConta = idConta
-        self.idUsuarioFK = idUsuarioFK
+        self.cpfUsuarioFK = cpfUsuarioFK
         self.nomeBanco = nomeBanco
         self.numConta = numConta
     }
     
     let idConta: Int
-    let idUsuarioFK: Int
+    let cpfUsuarioFK: String
     let nomeBanco: String
     let numConta: Int
 }

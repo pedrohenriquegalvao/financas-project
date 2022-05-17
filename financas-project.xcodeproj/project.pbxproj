@@ -21,7 +21,6 @@
 		9687C186281B6D1F0024724F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9687C185281B6D1F0024724F /* Assets.xcassets */; };
 		9687C189281B6D1F0024724F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9687C187281B6D1F0024724F /* LaunchScreen.storyboard */; };
 		96EE954A282C898500B670E1 /* ContaBancaria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE9549282C898500B670E1 /* ContaBancaria.swift */; };
-		96EE954C282C8AB900B670E1 /* SQLiteCommandsConta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE954B282C8AB900B670E1 /* SQLiteCommandsConta.swift */; };
 		96EE954E282C939300B670E1 /* ControleAdicionarContaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE954D282C939300B670E1 /* ControleAdicionarContaViewModel.swift */; };
 		96EE9554282C975700B670E1 /* AdicionarContaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE9553282C975700B670E1 /* AdicionarContaViewController.swift */; };
 /* End PBXBuildFile section */
@@ -55,7 +54,6 @@
 		9687C18A281B6D1F0024724F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96EE9548282C891000B670E1 /* financas-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "financas-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96EE9549282C898500B670E1 /* ContaBancaria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContaBancaria.swift; sourceTree = "<group>"; };
-		96EE954B282C8AB900B670E1 /* SQLiteCommandsConta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteCommandsConta.swift; sourceTree = "<group>"; };
 		96EE954D282C939300B670E1 /* ControleAdicionarContaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControleAdicionarContaViewModel.swift; sourceTree = "<group>"; };
 		96EE9553282C975700B670E1 /* AdicionarContaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarContaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,7 +75,6 @@
 			children = (
 				9660A798282A9DBA006F12C3 /* SQLiteDatabase.swift */,
 				9660A79B282AA0AE006F12C3 /* SQLiteCommands.swift */,
-				96EE954B282C8AB900B670E1 /* SQLiteCommandsConta.swift */,
 			);
 			path = SQLiteDatasource;
 			sourceTree = "<group>";
@@ -220,7 +217,6 @@
 				9660A79F282AAF71006F12C3 /* CadatroUsuarioViewModel.swift in Sources */,
 				96EE9554282C975700B670E1 /* AdicionarContaViewController.swift in Sources */,
 				9660A79C282AA0AE006F12C3 /* SQLiteCommands.swift in Sources */,
-				96EE954C282C8AB900B670E1 /* SQLiteCommandsConta.swift in Sources */,
 				96EE954E282C939300B670E1 /* ControleAdicionarContaViewModel.swift in Sources */,
 				9601C26128235A8900218923 /* ControleViewController.swift in Sources */,
 				96EE954A282C898500B670E1 /* ContaBancaria.swift in Sources */,

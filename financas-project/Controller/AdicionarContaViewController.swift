@@ -8,6 +8,7 @@
 import UIKit
 
 class AdicionarContaViewController: UIViewController {
+    var cpf: String?
     
     @IBOutlet weak var nomeBancoTextField: UITextField!
     @IBOutlet weak var numContaTextField: UITextField!
@@ -16,8 +17,11 @@ class AdicionarContaViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
         SQLiteCommands.createTableConta()
+        //SQLiteCommands.deleteRowsConta()
         SQLiteCommands.presentRowsConta()
+        
         
     }
 
@@ -30,13 +34,13 @@ class AdicionarContaViewController: UIViewController {
     
     @IBAction func adicionarContaButton(_ sender: Any) {
         let idConta: Int = 0
-        let idUsuarioFK: Int = 0
+        let cpfUsuarioFK: String = cpf ?? ""
         let nomeBanco = nomeBancoTextField.text ?? ""
         let numConta = Int(numContaTextField.text!) ?? 0
 
         
         
-        let contaValues = ContaBancaria(idConta: idConta, idUsuarioFK: idUsuarioFK, nomeBanco: nomeBanco, numConta: numConta)
+        let contaValues = ContaBancaria(idConta: idConta, cpfUsuarioFK: cpfUsuarioFK, nomeBanco: nomeBanco, numConta: numConta)
         
         adicionarConta(contaValues)
         
@@ -44,7 +48,7 @@ class AdicionarContaViewController: UIViewController {
     
     private func adicionarConta (_ contaValues: ContaBancaria) {
         let contaAdicionada = SQLiteCommands.insertRowConta(contaValues)
-        
+        print("ADICIONAR CONTA CHAMADO - AdicionarContaViewController")
         if contaAdicionada == true {
             dismiss(animated: true, completion: nil)
         } else {

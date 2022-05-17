@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SQLiteCommands.presentRows()
+        
         // Do any additional setup after loading the view.
        
     }
@@ -40,11 +42,20 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "LoginParaControle") {
-            let displayVC = segue.destination as! ControleViewController
-            displayVC.nome = nomeTextField.text
-            displayVC.cpf = cpfTextField.text
+            if (nomeTextField.text == "" || cpfTextField.text == "") {
+                let alert = UIAlertController(title: "Erro", message: "Preencha os campos para prosseguir", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.cancel))
+                present(alert, animated: true)
+            } else {
+                let displayVC = segue.destination as! ControleViewController
+                displayVC.nome = nomeTextField.text
+                displayVC.cpf = cpfTextField.text
+            }
+            
         }
     }
+    
+    
     
     
 

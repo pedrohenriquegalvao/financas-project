@@ -10,16 +10,15 @@ class ControleAdicionarContaViewModel {
     private var contaValues: ContaBancaria?
     
     let idConta: Int?
-    let idUsuarioFK: Int?
+    let cpfUsuarioFK: String?
     let nomeBanco: String?
     let numConta: Int?
    
     
     init (contaValues: ContaBancaria?) {
         self.contaValues = contaValues
-        
         self.idConta = contaValues?.idConta
-        self.idUsuarioFK = contaValues?.idUsuarioFK
+        self.cpfUsuarioFK = contaValues?.cpfUsuarioFK
         self.nomeBanco = contaValues?.nomeBanco
         self.numConta = contaValues?.numConta
         

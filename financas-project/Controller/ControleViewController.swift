@@ -12,20 +12,43 @@ class ControleViewController: UIViewController {
     var cpf: String?
     
     @IBOutlet weak var nomeLabel: UILabel!
+    
+    @IBOutlet weak var contaViewElement: UIView!
+    
+    @IBOutlet weak var nomeBancoLabel: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        var dados = SQLiteCommands.filtra(cpf: cpf ?? "")
+        var dadosUsuario = SQLiteCommands.filtra(cpf: cpf ?? "")
         do {
-           try nomeLabel.text = dados?.get(SQLiteCommands.nomeUsuario) ?? ""
+           try nomeLabel.text = dadosUsuario?.get(SQLiteCommands.nomeUsuario) ?? "Nome padrão"
         } catch {
-            nomeLabel.text = "Nome padrao"
+            print(error)
         }
-       
+        
+        var dadosConta = SQLiteCommands.filtraConta(cpf: cpf ?? "")
+        
+        do {
+           try nomeBancoLabel.text = dadosConta?.get(SQLiteCommands.nomeBanco) ?? "Banco padrão"
+        } catch {
+            print(error)
+        }
+        
+       // nomeBancoLabel.text = ("\(nome ?? "Banco Padrão")")
         
         
         // Do any additional setup after loading the view.
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "ControleParaAddConta") {
+            let displayVC = segue.destination as! AdicionarContaViewController
+            displayVC.cpf = cpf
+        }
+    }
     
     
     
