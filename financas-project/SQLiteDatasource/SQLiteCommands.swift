@@ -222,10 +222,8 @@ class SQLiteCommands {
     }
     
     static func filtraConta(cpf:String) -> Row? {
-        print("ALOHA")
-        do {
-            print("CU")
 
+        do {
             let query = SQLiteCommands.tableConta.filter(SQLiteCommands.cpfUsuarioFK == cpf)
             print(query.asSQL())
             var data = try SQLiteDatabase.sharedInstance.database!.pluck(query)
@@ -235,6 +233,24 @@ class SQLiteCommands {
             
         } catch {
             print("Get by Id Error : (error)")
+            return nil
+            
+        }
+        
+    }
+    
+    static func retornaNumConta(cpf:String) -> Int? {
+
+        do {
+            let query = SQLiteCommands.tableConta.filter(SQLiteCommands.cpfUsuarioFK == cpf)
+            print(query.asSQL())
+            var data = try SQLiteDatabase.sharedInstance.database!.pluck(query)
+            print(data ?? "")
+            print(try data?.get(nomeBanco) ?? "")
+            return try? data?.get(numConta) ?? 9999
+            
+        } catch {
+            print("Erro ao retornar numero da conta")
             return nil
             
         }

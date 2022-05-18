@@ -17,6 +17,7 @@ class ControleViewController: UIViewController {
     
     @IBOutlet weak var nomeBancoLabel: UILabel!
     
+    @IBOutlet weak var numContaLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -32,6 +33,8 @@ class ControleViewController: UIViewController {
         
         do {
            try nomeBancoLabel.text = dadosConta?.get(SQLiteCommands.nomeBanco) ?? "Banco padrão"
+            numContaLabel.text! += String( SQLiteCommands.retornaNumConta(cpf: cpf ?? "")!)
+            
         } catch {
             print(error)
         }

@@ -21,8 +21,11 @@ class ViewController: UIViewController {
        
     }
     @IBAction func btnLogin(_ sender: Any) {
-        print("ä")
-        SQLiteCommands.filtra(cpf: cpfTextField.text!)
+        if (SQLiteCommands.filtra(cpf: cpfTextField.text!) == nil) {
+            let alert = UIAlertController(title: "Erro", message: "Não há nenhum usuário com este CPF", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.cancel))
+            present(alert, animated: true)
+        } 
         
         /*NSString *query=[NSString stringWithFormat:@"select * from Usuario where cpf=\"%@\"",cpfTextField.text];
         NSLog(@"%@",query);
