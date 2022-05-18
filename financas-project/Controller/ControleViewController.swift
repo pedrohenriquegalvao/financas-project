@@ -21,6 +21,7 @@ class ControleViewController: UIViewController {
     
     
     override func viewDidLoad() {
+    
         super.viewDidLoad()
         var dadosUsuario = SQLiteCommands.filtra(cpf: cpf ?? "")
         do {
@@ -33,16 +34,17 @@ class ControleViewController: UIViewController {
         
         do {
            try nomeBancoLabel.text = dadosConta?.get(SQLiteCommands.nomeBanco) ?? "Banco padrão"
-            numContaLabel.text! += String( SQLiteCommands.retornaNumConta(cpf: cpf ?? "")!)
+            let numConta = SQLiteCommands.retornaNumConta(cpf: cpf ?? "")
+            if (numConta == nil){
+                numContaLabel.text = "9999"
+            }else{
+                numContaLabel.text! += String(numConta!)
+            }
+            
             
         } catch {
             print(error)
         }
-        
-       // nomeBancoLabel.text = ("\(nome ?? "Banco Padrão")")
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     
