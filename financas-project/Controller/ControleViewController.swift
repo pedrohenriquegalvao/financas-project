@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ControleViewController: UIViewController {
+class ControleViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     var nome: String?
     var cpf: String?
     
@@ -55,8 +55,17 @@ class ControleViewController: UIViewController {
         }
     }
     
+    let images = ["familia", "alimentacao", "lazer", "educacao", "house"]
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as! PostCell
+        cell.image.image = UIImage(named: images[indexPath.row])
+        return cell
+    }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
 
     /*
     // MARK: - Navigation
@@ -68,4 +77,14 @@ class ControleViewController: UIViewController {
     }
     */
 
+}
+
+class PostCell: UICollectionViewCell{
+    @IBOutlet weak var background: UIView!
+    @IBOutlet weak var image: UIImageView!
+    
+    override func awakeFromNib() {
+        background.layer.cornerRadius = 12
+        image.layer.cornerRadius = 12
+    }
 }
