@@ -38,15 +38,21 @@ class CadastroViewController: UIViewController {
     }
     
     @IBAction func cadastrarButton(_ sender: Any) {
-        let nomeUsuario = nomeTextField.text ?? ""
-        let cpf = cpfTextField.text ?? ""
-        let dataNascimento = dataNascimentoTextField.text ?? ""
-        let email = emailTextField.text ?? ""
-        
-        let usuarioValues = Usuario(nomeUsuario: nomeUsuario, cpf: cpf, dataNascimento: dataNascimento, email: email)
-        
-        cadastrarUsuario(usuarioValues)
-        
+        if (nomeTextField.text == "" || cpfTextField.text == "" || cpfTextField.text!.count < 14 || dataNascimentoTextField.text == "" || emailTextField.text == "" ){
+            let alert = UIAlertController(title: "Erro", message: "Preencha todos os campos para cadastrar-se", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.cancel))
+            present(alert, animated: true)
+            return
+        } else {
+            let nomeUsuario = nomeTextField.text ?? ""
+            let cpf = cpfTextField.text ?? ""
+            let dataNascimento = dataNascimentoTextField.text ?? ""
+            let email = emailTextField.text ?? ""
+            
+            let usuarioValues = Usuario(nomeUsuario: nomeUsuario, cpf: cpf, dataNascimento: dataNascimento, email: email)
+            
+            cadastrarUsuario(usuarioValues)
+        }
     }
     
     // MARK: Criar novo usuario

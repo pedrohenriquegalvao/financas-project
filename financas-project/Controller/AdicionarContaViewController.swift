@@ -9,6 +9,7 @@ import UIKit
 
 class AdicionarContaViewController: UIViewController {
     var cpf: String?
+    var nome: String?
     
     @IBOutlet weak var nomeBancoTextField: UITextField!
     @IBOutlet weak var numContaTextField: UITextField!
@@ -33,31 +34,43 @@ class AdicionarContaViewController: UIViewController {
     }
     
     @IBAction func adicionarContaButton(_ sender: Any) {
-        let idConta: Int = 0
-        let cpfUsuarioFK: String = cpf ?? ""
-        let nomeBanco = nomeBancoTextField.text ?? ""
-        let numConta = Int(numContaTextField.text!) ?? 0
+        if (nomeBancoTextField.text == "" || numContaTextField.text == "") {
+            let alert = UIAlertController(title: "Erro", message: "Preencha todos os campos para prosseguir", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.cancel))
+            present(alert, animated: true)
+            return
+        } else {
+            let idConta: Int = 0
+            let cpfUsuarioFK: String = cpf ?? ""
+            let nomeBanco = nomeBancoTextField.text ?? ""
+            let numConta = Int(numContaTextField.text!) ?? 0
+            
+            let contaValues = ContaBancaria(idConta: idConta, cpfUsuarioFK: cpfUsuarioFK, nomeBanco: nomeBanco, numConta: numConta)
+    
+            adicionarConta(contaValues)
+        }
 
-        
-        
-        let contaValues = ContaBancaria(idConta: idConta, cpfUsuarioFK: cpfUsuarioFK, nomeBanco: nomeBanco, numConta: numConta)
-        
-        adicionarConta(contaValues)
-        
     }
     
     private func adicionarConta (_ contaValues: ContaBancaria) {
         let contaAdicionada = SQLiteCommands.insertRowConta(contaValues)
         print("ADICIONAR CONTA CHAMADO - AdicionarContaViewController")
-        if contaAdicionada == true {
-            dismiss(animated: true, completion: nil)
-        } else {
-            let alert = UIAlertController(title: "Erro", message: "Já existe um usuário com este CPF", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.cancel))
+        if contaAdicionada != true {
+            let alert = UIAlertController(title: "Erro", message: "Este usuário já possui uma Conta", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.cancel, handler: { action in self.performSegue(withIdentifier: "AddContaParaControle", sender: self)}))
             present(alert, animated: true)
-            return
+            
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "AddContaParaControle") {
+            let displayVC = segue.destination as! ControleViewController
+            displayVC.cpf = cpf
+            displayVC.nome = nome
+        }
+    }
+    
 }
     
 

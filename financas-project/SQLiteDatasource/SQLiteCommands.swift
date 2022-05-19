@@ -154,9 +154,9 @@ class SQLiteCommands {
             try database.run(tableConta.create(ifNotExists: true) { table in
                 
                 table.column(idConta, primaryKey: true)
-                table.column(cpfUsuarioFK)
+                table.column(cpfUsuarioFK, unique: true)
                 table.column(nomeBanco)
-                table.column(numConta, unique: true)
+                table.column(numConta)
                 
                 table.foreignKey(cpfUsuarioFK, references: tableUsuario, cpf)
                 print("Tabela criada")
@@ -221,6 +221,8 @@ class SQLiteCommands {
         return contaArray
     }
     
+    
+    
     static func filtraConta(cpf:String) -> Row? {
 
         do {
@@ -256,6 +258,7 @@ class SQLiteCommands {
         }
         
     }
+    
     
     static func deleteRowsConta(){
         print("DELETE CONTA CHAMADO")

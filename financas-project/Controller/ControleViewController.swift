@@ -52,6 +52,7 @@ class ControleViewController: UIViewController, UICollectionViewDelegate, UIColl
         if(segue.identifier == "ControleParaAddConta") {
             let displayVC = segue.destination as! AdicionarContaViewController
             displayVC.cpf = cpf
+            displayVC.nome = nome
         }
     }
     
