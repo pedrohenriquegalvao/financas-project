@@ -359,13 +359,32 @@
                                                                 <constraint firstAttribute="width" constant="175" id="c2v-eJ-3kz"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaV-o3-YYQ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="175" height="168"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="175" id="3MS-Vt-YWl"/>
+                                                                <constraint firstAttribute="height" constant="168" id="bc0-Y5-99w"/>
+                                                            </constraints>
+                                                            <color key="tintColor" systemColor="labelColor"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title="teste">
+                                                                <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="19"/>
+                                                            </buttonConfiguration>
+                                                            <connections>
+                                                                <segue destination="qbg-Yt-8sy" kind="show" id="gGG-vY-pic"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
+                                                        <constraint firstItem="iaV-o3-YYQ" firstAttribute="leading" secondItem="fVe-eW-L72" secondAttribute="leading" id="8IX-kP-0ir"/>
+                                                        <constraint firstAttribute="bottom" secondItem="iaV-o3-YYQ" secondAttribute="bottom" id="UYu-N9-e1y"/>
                                                         <constraint firstItem="NMm-fG-RzF" firstAttribute="leading" secondItem="fVe-eW-L72" secondAttribute="leading" id="Z2w-N1-qWf"/>
                                                         <constraint firstAttribute="bottom" secondItem="NMm-fG-RzF" secondAttribute="bottom" id="iEM-o0-Cqf"/>
                                                         <constraint firstAttribute="trailing" secondItem="NMm-fG-RzF" secondAttribute="trailing" id="iHN-ad-Hhe"/>
+                                                        <constraint firstItem="iaV-o3-YYQ" firstAttribute="top" secondItem="fVe-eW-L72" secondAttribute="top" id="kgb-Xz-hqz"/>
                                                         <constraint firstItem="NMm-fG-RzF" firstAttribute="top" secondItem="fVe-eW-L72" secondAttribute="top" id="uW0-kD-TPY"/>
+                                                        <constraint firstAttribute="trailing" secondItem="iaV-o3-YYQ" secondAttribute="trailing" id="yz5-sC-c3D"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -379,6 +398,7 @@
                                         <size key="customSize" width="175" height="168"/>
                                         <connections>
                                             <outlet property="background" destination="fVe-eW-L72" id="JLe-GE-H1A"/>
+                                            <outlet property="dbutton" destination="iaV-o3-YYQ" id="BxF-YD-yky"/>
                                             <outlet property="image" destination="NMm-fG-RzF" id="TPP-MB-9c1"/>
                                         </connections>
                                     </collectionViewCell>
@@ -429,6 +449,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VqA-ON-fum" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3360.8695652173915" y="68.973214285714278"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vTl-2G-hvH">
+            <objects>
+                <viewController id="qbg-Yt-8sy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eiJ-TA-dui">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ZPg-wt-OuI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JfI-Hn-D5O"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ccr-5a-XPl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3359" y="783"/>
         </scene>
         <!--Adicionar Conta View Controller-->
         <scene sceneID="Iuc-oM-hew">
@@ -632,6 +668,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="z6F-KH-Bca"/>
         <segue reference="QcP-nC-c8i"/>
         <segue reference="nqM-PM-7B5"/>
     </inferredMetricsTieBreakers>
@@ -639,6 +676,9 @@
         <image name="moeda" width="4096" height="4096"/>
         <image name="money" width="1400" height="1400"/>
         <image name="user-cadastro" width="860" height="900"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

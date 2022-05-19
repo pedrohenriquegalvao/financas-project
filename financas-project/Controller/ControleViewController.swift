@@ -57,10 +57,12 @@ class ControleViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     let images = ["familia", "alimentacao", "lazer", "educacao", "house"]
+    let buttons = ["Familia", "Alimentação", "Lazer", "Educação", "Casa"]
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as! PostCell
         cell.image.image = UIImage(named: images[indexPath.row])
+        cell.dbutton.setTitle(buttons[indexPath.row], for: .normal)
         return cell
     }
     
@@ -83,9 +85,11 @@ class ControleViewController: UIViewController, UICollectionViewDelegate, UIColl
 class PostCell: UICollectionViewCell{
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var dbutton: UIButton!
     
     override func awakeFromNib() {
         background.layer.cornerRadius = 12
         image.layer.cornerRadius = 12
+        dbutton.layer.cornerRadius = 12
     }
 }
