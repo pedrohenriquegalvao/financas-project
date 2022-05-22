@@ -22,8 +22,10 @@ class CadastroViewController: UIViewController {
         SQLiteCommands.createTable()
         nomeTextField.becomeFirstResponder()
         cpfTextField.delegate = self
-        
         SQLiteCommands.presentRows()
+        
+        SQLiteCommands.createTableGasto()
+        SQLiteCommands.presentRowsGasto()
         //SQLiteCommands.deleteRowsUsuario()
         //SQLiteCommands.presentRows()
     }
@@ -52,6 +54,8 @@ class CadastroViewController: UIViewController {
             let usuarioValues = Usuario(nomeUsuario: nomeUsuario, cpf: cpf, dataNascimento: dataNascimento, email: email)
             
             cadastrarUsuario(usuarioValues)
+            
+            cadastrarGastos(cpf)
         }
     }
     
@@ -69,7 +73,33 @@ class CadastroViewController: UIViewController {
             return
         }
     }
-
+    
+    private func cadastrarGastos (_ cpf: String) {
+        let gastoFamiliaValues = Gasto(idGasto: 0, cpfUsuarioFKG: cpf, nomeGasto: "Família", valorGasto: 1000.00)
+        let gastoFamiliaAdicionado = SQLiteCommands.insertRowGasto(gastoFamiliaValues)
+        print("FAMILIA ADICIONADO")
+        let gastoAlimentacaoValues = Gasto(idGasto: 1, cpfUsuarioFKG: cpf, nomeGasto: "Alimentação", valorGasto: 1000.00)
+        let gastoAlimentacaoAdicionado = SQLiteCommands.insertRowGasto(gastoAlimentacaoValues)
+        print("ALIMENTAÇÃO ADICIONADO")
+        let gastoLazerValues = Gasto(idGasto: 2, cpfUsuarioFKG: cpf, nomeGasto: "Lazer", valorGasto: 1000.00)
+        let gastoLazerAdicionado = SQLiteCommands.insertRowGasto(gastoLazerValues)
+        print("LAZER ADICIONADO")
+        let gastoEducacaoValues = Gasto(idGasto: 3, cpfUsuarioFKG: cpf, nomeGasto: "Educação", valorGasto: 1000.00)
+        let gastoEducacaoAdicionado = SQLiteCommands.insertRowGasto(gastoEducacaoValues)
+        print("EDUCAÇÃO ADICIONADO")
+        let gastoCasaValues = Gasto(idGasto: 4, cpfUsuarioFKG: cpf, nomeGasto: "Casa", valorGasto: 1000.00)
+        let gastoCasaAdicionado = SQLiteCommands.insertRowGasto(gastoCasaValues)
+        print("CASA ADICIONADO")
+        if gastoFamiliaAdicionado == true && gastoAlimentacaoAdicionado == true && gastoLazerAdicionado == true && gastoEducacaoAdicionado == true && gastoCasaAdicionado == true {
+            dismiss(animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Erro", message: "Erro ao inserir algum dos Gastos", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.cancel))
+            present(alert, animated: true)
+            return
+        }
+    }
+    
 }
 
 extension CadastroViewController: UITextFieldDelegate {

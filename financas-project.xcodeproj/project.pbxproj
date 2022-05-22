@@ -23,6 +23,8 @@
 		96EE954A282C898500B670E1 /* ContaBancaria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE9549282C898500B670E1 /* ContaBancaria.swift */; };
 		96EE954E282C939300B670E1 /* ControleAdicionarContaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE954D282C939300B670E1 /* ControleAdicionarContaViewModel.swift */; };
 		96EE9554282C975700B670E1 /* AdicionarContaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE9553282C975700B670E1 /* AdicionarContaViewController.swift */; };
+		96EEF284283A851C00056F51 /* Gasto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EEF283283A851C00056F51 /* Gasto.swift */; };
+		96EEF286283A9DC400056F51 /* GastoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EEF285283A9DC400056F51 /* GastoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +58,8 @@
 		96EE9549282C898500B670E1 /* ContaBancaria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContaBancaria.swift; sourceTree = "<group>"; };
 		96EE954D282C939300B670E1 /* ControleAdicionarContaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControleAdicionarContaViewModel.swift; sourceTree = "<group>"; };
 		96EE9553282C975700B670E1 /* AdicionarContaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarContaViewController.swift; sourceTree = "<group>"; };
+		96EEF283283A851C00056F51 /* Gasto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gasto.swift; sourceTree = "<group>"; };
+		96EEF285283A9DC400056F51 /* GastoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			children = (
 				9660A79E282AAF71006F12C3 /* CadatroUsuarioViewModel.swift */,
 				96EE954D282C939300B670E1 /* ControleAdicionarContaViewModel.swift */,
+				96EEF285283A9DC400056F51 /* GastoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			children = (
 				9660A72C282A9667006F12C3 /* Usuario.swift */,
 				96EE9549282C898500B670E1 /* ContaBancaria.swift */,
+				96EEF283283A851C00056F51 /* Gasto.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,7 +228,9 @@
 				96EE954A282C898500B670E1 /* ContaBancaria.swift in Sources */,
 				9687C17F281B6D1C0024724F /* SceneDelegate.swift in Sources */,
 				9601C25F28235A7500218923 /* CadastroViewController.swift in Sources */,
+				96EEF286283A9DC400056F51 /* GastoViewModel.swift in Sources */,
 				9660A799282A9DBA006F12C3 /* SQLiteDatabase.swift in Sources */,
+				96EEF284283A851C00056F51 /* Gasto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

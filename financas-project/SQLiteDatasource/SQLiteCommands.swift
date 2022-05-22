@@ -66,7 +66,7 @@ class SQLiteCommands {
     }
     
     static func presentRows() -> [Usuario]? {
-        print("AASAASFEWCEEWVWEWVWCSDCDSCSDC")
+        print("PRESENT ROWS CHAMADO")
         guard let database = SQLiteDatabase.sharedInstance.database else {
             print("Datastore connection error")
             return nil
@@ -74,6 +74,7 @@ class SQLiteCommands {
         var usuarioArray = [Usuario]()
         tableUsuario = tableUsuario.order(cpf.desc)
         do {
+            print("APRESENTAR USUARIO")
             for usuario in try database.prepare(tableUsuario) {
                 let nomeUsuarioValue = usuario[nomeUsuario]
                 let cpfValue = usuario[cpf]
@@ -149,8 +150,7 @@ class SQLiteCommands {
             return
         }
         do {
-            
-            
+        
             try database.run(tableConta.create(ifNotExists: true) { table in
                 
                 table.column(idConta, primaryKey: true)
@@ -159,10 +159,10 @@ class SQLiteCommands {
                 table.column(numConta)
                 
                 table.foreignKey(cpfUsuarioFK, references: tableUsuario, cpf)
-                print("Tabela criada")
+                print("Tabela Conta criada")
             })
         } catch {
-            print("A tabela ja existe: \(error)")
+            print("A tabela conta ja existe: \(error)")
         }
     }
     
@@ -279,6 +279,92 @@ class SQLiteCommands {
     }
     
     
+    //-MARK: TABELA GASTO
+    static var tableGasto = Table("Gasto")
     
+    static let idGasto = Expression<Int>("idGasto")
+    static let cpfUsuarioFKG = Expression<String>("cpfUsuarioFKG")
+    static let nomeGasto = Expression<String>("nomeGasto")
+    static let valorGasto =  Expression<Double>("valorGasto")
+    
+    static func createTableGasto() {
+        
+        guard let database = SQLiteDatabase.sharedInstance.database
+            else {
+                print("Datastore connection error")
+            return
+        }
+        do {
+            
+            
+            try database.run(tableGasto.create(ifNotExists: true) { table in
+                
+                table.column(idGasto, primaryKey: true)
+                table.column(cpfUsuarioFKG)
+                table.column(nomeGasto)
+                table.column(valorGasto)
+                
+                table.foreignKey(cpfUsuarioFKG, references: tableUsuario, cpf)
+                print("Tabela Gasto criada")
+            })
+        } catch {
+            print("A tabela gasto ja existe: \(error)")
+        }
+    }
+    
+    static func insertRowGasto(_ gasto: Gasto) -> Bool? {
+        print("INSERT ROW GASTO CHAMADO - SQLiteCommands")
+        guard let database =
+                SQLiteDatabase.sharedInstance.database else{
+            print("Datastore connection error")
+            return nil
+        }
+        do {
+            print("Fazendo")
+            try database.run(tableGasto.insert(
+                cpfUsuarioFKG <- gasto.cpfUsuarioFKG,
+                nomeGasto <- gasto.nomeGasto,
+                valorGasto <- gasto.valorGasto
+                ))
+            return true
+        } catch let Result.error(message,code,statement) where code == SQLITE_CONSTRAINT{
+            print("1- Falha ao inserir a linha \(message) em \(String(describing: statement))")
+            return false
+        } catch let error {
+            print("2- Falha ao inserir a linha \(error)")
+            return false
+        }
+    }
+    
+    static func presentRowsGasto() -> [Gasto]? {
+        print("PRESENT ROWS GASTO CHAMADO")
+    
+        guard let database = SQLiteDatabase.sharedInstance.database else {
+            print("Datastore connection error")
+            return nil
+        }
+        
+        var gastoArray = [Gasto]()
+        tableGasto = tableGasto.order(idGasto.desc)
+        do {
+            print("APRESENTAR GASTO: ")
+            for gasto in try database.prepare(tableGasto) {
+                let idGastoValue = gasto[idGasto]
+                let cpfUsuarioFKGValue = gasto[cpfUsuarioFKG]
+                let nomeGastoValue = gasto[nomeGasto]
+                let valorGastoValue = gasto[valorGasto]
+                
+                let gastoObject = Gasto(idGasto: idGastoValue, cpfUsuarioFKG: cpfUsuarioFKGValue, nomeGasto: nomeGastoValue, valorGasto: valorGastoValue)
+                
+                gastoArray.append(gastoObject)
+                
+                print("idGasto \(gasto[idGasto]), cpfUsuarioFKG: \(gasto[cpfUsuarioFKG]), nomeGasto: \(gasto[nomeGasto]), valorGasto: \(gasto[valorGasto])")
+            
+            }
+        } catch {
+            print("Erro ao apresentar as linhas de Gasto: \(error)")
+        }
+        return gastoArray
+    }
     
 }
