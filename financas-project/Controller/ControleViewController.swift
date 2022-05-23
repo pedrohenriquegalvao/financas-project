@@ -23,14 +23,14 @@ class ControleViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
     
         super.viewDidLoad()
-        var dadosUsuario = SQLiteCommands.filtra(cpf: cpf ?? "")
+        let dadosUsuario = SQLiteCommands.filtra(cpf: cpf ?? "")
         do {
            try nomeLabel.text = dadosUsuario?.get(SQLiteCommands.nomeUsuario) ?? "Nome padrão"
         } catch {
             print(error)
         }
         
-        var dadosConta = SQLiteCommands.filtraConta(cpf: cpf ?? "")
+        let dadosConta = SQLiteCommands.filtraConta(cpf: cpf ?? "")
         
         do {
            try nomeBancoLabel.text = dadosConta?.get(SQLiteCommands.nomeBanco) ?? "Banco padrão"
@@ -45,6 +45,8 @@ class ControleViewController: UIViewController, UICollectionViewDelegate, UIColl
         } catch {
             print(error)
         }
+        
+        
     }
     
     
@@ -56,13 +58,23 @@ class ControleViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
+    
     let images = ["familia", "alimentacao", "lazer", "educacao", "house"]
-    let buttons = ["Familia", "Alimentação", "Lazer", "Educação", "Casa"]
+    //let buttons = ["Familia", "Alimentação", "Lazer", "Educação", "Casa"]
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as! PostCell
+        
+        var textoBotoes = Array<String>()
+        var textoLabels = Array<String>()
+        for gasto in SQLiteCommands.filtraGasto(cpf: cpf ?? "") {
+            textoBotoes.append(gasto[SQLiteCommands.nomeGasto])
+            textoLabels.append(String(gasto[SQLiteCommands.valorGasto]))
+        }
+      
         cell.image.image = UIImage(named: images[indexPath.row])
-        cell.dbutton.setTitle(buttons[indexPath.row], for: .normal)
+        cell.dbutton.setTitle(textoBotoes[indexPath.row], for: .normal)
+        cell.cellValorGasto.text = textoLabels[indexPath.row]
         return cell
     }
     
@@ -86,10 +98,12 @@ class PostCell: UICollectionViewCell{
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var dbutton: UIButton!
+    @IBOutlet weak var cellValorGasto: UILabel!
     
     override func awakeFromNib() {
         background.layer.cornerRadius = 12
         image.layer.cornerRadius = 12
         dbutton.layer.cornerRadius = 12
+        
     }
 }

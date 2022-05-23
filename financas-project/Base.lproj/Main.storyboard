@@ -374,6 +374,13 @@
                                                                 <segue destination="qbg-Yt-8sy" kind="show" id="gGG-vY-pic"/>
                                                             </connections>
                                                         </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Valor mensal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yre-hr-qKJ">
+                                                            <rect key="frame" x="36" y="147" width="103" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -398,6 +405,7 @@
                                         <size key="customSize" width="175" height="168"/>
                                         <connections>
                                             <outlet property="background" destination="fVe-eW-L72" id="JLe-GE-H1A"/>
+                                            <outlet property="cellValorGasto" destination="yre-hr-qKJ" id="B0i-YH-gPr"/>
                                             <outlet property="dbutton" destination="iaV-o3-YYQ" id="BxF-YD-yky"/>
                                             <outlet property="image" destination="NMm-fG-RzF" id="TPP-MB-9c1"/>
                                         </connections>

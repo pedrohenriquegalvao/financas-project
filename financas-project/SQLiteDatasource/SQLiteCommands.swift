@@ -367,4 +367,27 @@ class SQLiteCommands {
         return gastoArray
     }
     
+    static func filtraGasto(cpf:String) -> Array<Row> {
+        print("FILTRA GASTO CHAMADO")
+        guard let database = SQLiteDatabase.sharedInstance.database else {
+            print("Datastore connection error")
+            return Array<Row>()
+        }
+        
+        do {
+            let query = SQLiteCommands.tableGasto.filter(SQLiteCommands.cpfUsuarioFKG == cpf)
+            print(query.asSQL())
+            let all = Array(try database.prepare(query))
+            //print(all)
+            return all
+            
+        } catch {
+            print("Get by Id Error : (error)")
+            return Array<Row>()
+            
+        }
+        
+    }
+    
+    
 }
