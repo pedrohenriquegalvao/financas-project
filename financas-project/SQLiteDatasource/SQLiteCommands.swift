@@ -345,7 +345,7 @@ class SQLiteCommands {
         }
         
         var gastoArray = [Gasto]()
-        tableGasto = tableGasto.order(idGasto.desc)
+        tableGasto = tableGasto.order(idGasto.asc)
         do {
             print("APRESENTAR GASTO: ")
             for gasto in try database.prepare(tableGasto) {
@@ -367,8 +367,8 @@ class SQLiteCommands {
         return gastoArray
     }
     
-    static func filtraGasto(cpf:String) -> Array<Row> {
-        print("FILTRA GASTO CHAMADO")
+    static func filtraGastos(cpf:String) -> Array<Row> {
+        print("FILTRA GASTOS CHAMADO")
         guard let database = SQLiteDatabase.sharedInstance.database else {
             print("Datastore connection error")
             return Array<Row>()
@@ -388,6 +388,51 @@ class SQLiteCommands {
         }
         
     }
+    
+    static func filtraGasto(idGasto: Int) -> Row? {
+        print("FILTRA GASTO CHAMADO")
+        guard let database = SQLiteDatabase.sharedInstance.database else {
+            print("Datastore connection error")
+            return nil
+        }
+        
+        do {
+            let query = SQLiteCommands.tableGasto.filter(SQLiteCommands.idGasto == idGasto)
+            print(query.asSQL())
+            let data = try SQLiteDatabase.sharedInstance.database!.pluck(query)
+            //print(all)
+            return data
+            
+        } catch {
+            print("Get by Id Error : (error)")
+            return nil
+            
+        }
+        
+    }
+    
+    static func updateRowGasto(idGasto: Int, novoValor: Double) -> Bool? {
+        print("UPDATE ROW GASTO CHAMADO - SQLiteCommands")
+        guard let database =
+                SQLiteDatabase.sharedInstance.database else{
+            print("Datastore connection error")
+            return nil
+        }
+        do {
+            let gasto = tableGasto.filter(SQLiteCommands.idGasto == idGasto).limit(1)
+            try database.run(gasto.update(
+                valorGasto <- novoValor
+            ))
+            return true
+        } catch let Result.error(message,code,statement) where code == SQLITE_CONSTRAINT{
+            print("1- Falha ao atualizar a linha \(message) em \(String(describing: statement))")
+            return false
+        } catch let error {
+            print("2- Falha ao atualizar a linha \(error)")
+            return false
+        }
+    }
+    
     
     
 }

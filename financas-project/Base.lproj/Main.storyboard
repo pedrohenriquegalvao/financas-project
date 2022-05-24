@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="financas_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-FINANCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPt-rH-MDp">
-                                <rect key="frame" x="128" y="209" width="158" height="36"/>
+                                <rect key="frame" x="128" y="165" width="158" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="158" id="dtz-7t-2YZ"/>
                                     <constraint firstAttribute="height" constant="36" id="t6h-hs-4G7"/>
@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insira seu nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dvo-r3-i6F">
-                                <rect key="frame" x="93" y="487" width="228" height="34"/>
+                                <rect key="frame" x="93" y="443" width="228" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="228" id="au2-75-2Zd"/>
                                     <constraint firstAttribute="height" constant="34" id="cEh-tL-KfD"/>
@@ -37,7 +37,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insira seu CPF" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2cF-Wd-Xo9">
-                                <rect key="frame" x="93" y="543" width="228" height="34"/>
+                                <rect key="frame" x="93" y="499" width="228" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="5dQ-cO-LWM"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="ljv-d6-FcR"/>
@@ -48,7 +48,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnS-6T-0Yc">
-                                <rect key="frame" x="93" y="601" width="228" height="32"/>
+                                <rect key="frame" x="93" y="557" width="228" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="228" id="0UE-vF-Pqi"/>
                                     <constraint firstAttribute="height" constant="32" id="xvm-0d-GsA"/>
@@ -64,7 +64,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não possui cadastro?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8b-Rz-Pb4">
-                                <rect key="frame" x="125" y="652" width="164" height="21"/>
+                                <rect key="frame" x="125" y="608" width="164" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="164" id="40s-1V-n2j"/>
                                     <constraint firstAttribute="height" constant="21" id="rwU-tB-2Ax"/>
@@ -74,7 +74,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oud-BY-dgQ">
-                                <rect key="frame" x="145" y="669" width="124" height="31"/>
+                                <rect key="frame" x="145" y="625" width="124" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="124" id="Drz-di-oPN"/>
                                     <constraint firstAttribute="height" constant="31" id="cfP-pg-vom"/>
@@ -89,7 +89,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="s13-YL-Kva">
-                                <rect key="frame" x="38" y="275" width="338" height="190"/>
+                                <rect key="frame" x="38" y="231" width="338" height="190"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="190" id="Suh-DX-x8L"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="190" id="cjO-qV-vms"/>
@@ -97,7 +97,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCn-No-VMv">
-                                <rect key="frame" x="0.0" y="811" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="767" width="414" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moeda" translatesAutoresizingMaskIntoConstraints="NO" id="03F-Qo-lQF">
                                         <rect key="frame" x="161" y="-23" width="92" height="64"/>
@@ -194,11 +194,11 @@
             <objects>
                 <viewController id="VYF-77-Puv" customClass="ControleViewController" customModule="financas_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="49t-pX-zJ9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHf-dN-C63">
-                                <rect key="frame" x="0.0" y="825" width="414" height="71"/>
+                                <rect key="frame" x="0.0" y="771" width="414" height="71"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moeda" translatesAutoresizingMaskIntoConstraints="NO" id="iyq-sc-DjD">
                                         <rect key="frame" x="161" y="-23" width="4096" height="4096"/>
@@ -235,13 +235,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaY-vO-JgS">
-                                <rect key="frame" x="147" y="145" width="121" height="36"/>
+                                <rect key="frame" x="147" y="101" width="121" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIM-ah-0hV">
-                                <rect key="frame" x="66" y="241" width="282" height="114"/>
+                                <rect key="frame" x="66" y="197" width="282" height="114"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banco exemplo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufJ-FA-Tzq">
                                         <rect key="frame" x="8" y="8" width="139" height="24"/>
@@ -290,7 +290,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESPESAS FIXAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDI-vC-x48">
-                                <rect key="frame" x="85" y="398" width="242" height="36"/>
+                                <rect key="frame" x="85" y="354" width="242" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Jk3-SE-V6Q"/>
                                     <constraint firstAttribute="width" constant="242" id="rO8-Yp-9Jm"/>
@@ -300,7 +300,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZC-PA-jWe">
-                                <rect key="frame" x="126" y="202" width="160" height="31"/>
+                                <rect key="frame" x="126" y="158" width="160" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Vjk-rg-PHB"/>
                                     <constraint firstAttribute="width" constant="160" id="lRb-tq-DPa"/>
@@ -312,7 +312,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDf-Hp-VdR">
-                                <rect key="frame" x="102" y="108" width="209" height="22"/>
+                                <rect key="frame" x="102" y="64" width="209" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="209" id="G1I-gr-0kP"/>
                                     <constraint firstAttribute="height" constant="22" id="hRf-vQ-Pks"/>
@@ -322,7 +322,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTM-iV-4Jk">
-                                <rect key="frame" x="20" y="108" width="49" height="31"/>
+                                <rect key="frame" x="20" y="64" width="49" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sair">
                                     <color key="baseForegroundColor" red="0.29803922770000002" green="0.50980395079999996" blue="0.22745099660000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -333,7 +333,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="prO-zz-OWx">
-                                <rect key="frame" x="66" y="476" width="282" height="308"/>
+                                <rect key="frame" x="66" y="432" width="282" height="298"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6C9-XI-7pH">
                                     <size key="itemSize" width="175" height="168"/>
@@ -371,26 +371,30 @@
                                                                 <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="19"/>
                                                             </buttonConfiguration>
                                                             <connections>
-                                                                <segue destination="qbg-Yt-8sy" kind="show" id="gGG-vY-pic"/>
+                                                                <action selector="gastoButtonPressed:" destination="FM6-gw-rjx" eventType="touchUpInside" id="12Z-0u-r9u"/>
+                                                                <segue destination="qbg-Yt-8sy" kind="show" identifier="ControleParaGasto" id="gGG-vY-pic"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Valor mensal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yre-hr-qKJ">
-                                                            <rect key="frame" x="36" y="147" width="103" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor mensal:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yre-hr-qKJ">
+                                                            <rect key="frame" x="0.0" y="147" width="175" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="yre-hr-qKJ" secondAttribute="bottom" id="13x-Wy-7nT"/>
                                                         <constraint firstItem="iaV-o3-YYQ" firstAttribute="leading" secondItem="fVe-eW-L72" secondAttribute="leading" id="8IX-kP-0ir"/>
                                                         <constraint firstAttribute="bottom" secondItem="iaV-o3-YYQ" secondAttribute="bottom" id="UYu-N9-e1y"/>
                                                         <constraint firstItem="NMm-fG-RzF" firstAttribute="leading" secondItem="fVe-eW-L72" secondAttribute="leading" id="Z2w-N1-qWf"/>
+                                                        <constraint firstItem="yre-hr-qKJ" firstAttribute="leading" secondItem="fVe-eW-L72" secondAttribute="leading" id="cSV-W6-mnG"/>
                                                         <constraint firstAttribute="bottom" secondItem="NMm-fG-RzF" secondAttribute="bottom" id="iEM-o0-Cqf"/>
                                                         <constraint firstAttribute="trailing" secondItem="NMm-fG-RzF" secondAttribute="trailing" id="iHN-ad-Hhe"/>
                                                         <constraint firstItem="iaV-o3-YYQ" firstAttribute="top" secondItem="fVe-eW-L72" secondAttribute="top" id="kgb-Xz-hqz"/>
                                                         <constraint firstItem="NMm-fG-RzF" firstAttribute="top" secondItem="fVe-eW-L72" secondAttribute="top" id="uW0-kD-TPY"/>
+                                                        <constraint firstItem="yre-hr-qKJ" firstAttribute="top" secondItem="fVe-eW-L72" secondAttribute="top" constant="147" id="uc6-44-ZPt"/>
+                                                        <constraint firstAttribute="trailing" secondItem="yre-hr-qKJ" secondAttribute="trailing" id="ufC-Z5-7M9"/>
                                                         <constraint firstAttribute="trailing" secondItem="iaV-o3-YYQ" secondAttribute="trailing" id="yz5-sC-c3D"/>
                                                     </constraints>
                                                 </view>
@@ -449,6 +453,7 @@
                     <navigationItem key="navigationItem" id="pzT-tD-rzW"/>
                     <connections>
                         <outlet property="contaViewElement" destination="eIM-ah-0hV" id="zEn-Tm-Rp1"/>
+                        <outlet property="gastosCollectionView" destination="prO-zz-OWx" id="46N-hh-FTM"/>
                         <outlet property="nomeBancoLabel" destination="ufJ-FA-Tzq" id="Tua-R3-rAF"/>
                         <outlet property="nomeLabel" destination="ZDf-Hp-VdR" id="2Rb-Lo-jal"/>
                         <outlet property="numContaLabel" destination="NGa-dG-M2K" id="ndk-UT-0tK"/>
@@ -458,16 +463,16 @@
             </objects>
             <point key="canvasLocation" x="3360.8695652173915" y="68.973214285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Gasto View Controller-->
         <scene sceneID="vTl-2G-hvH">
             <objects>
-                <viewController id="qbg-Yt-8sy" sceneMemberID="viewController">
+                <viewController id="qbg-Yt-8sy" customClass="GastoViewController" customModule="financas_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eiJ-TA-dui">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOME DO GASTO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXz-i6-S3C">
-                                <rect key="frame" x="85" y="173" width="245" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOME DO GASTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXz-i6-S3C">
+                                <rect key="frame" x="85" y="129" width="245" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="ONd-HV-QId"/>
                                     <constraint firstAttribute="width" constant="245" id="Wvj-Xl-01q"/>
@@ -477,7 +482,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Va6-BI-LBO">
-                                <rect key="frame" x="105" y="570" width="205" height="31"/>
+                                <rect key="frame" x="105" y="526" width="205" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="205" id="j2C-Yc-XB0"/>
                                     <constraint firstAttribute="height" constant="31" id="mqY-Mu-nJd"/>
@@ -485,11 +490,12 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Atualizar"/>
                                 <connections>
-                                    <segue destination="VYF-77-Puv" kind="show" id="1Tj-TY-e2I"/>
+                                    <action selector="atualizarGastoPressed:" destination="qbg-Yt-8sy" eventType="touchUpInside" id="f3f-JW-1qD"/>
+                                    <segue destination="VYF-77-Puv" kind="show" identifier="GastoParaControle" id="1Tj-TY-e2I"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Valor do Gasto" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUg-r4-pr7">
-                                <rect key="frame" x="125" y="448" width="164" height="34"/>
+                                <rect key="frame" x="125" y="404" width="164" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="INZ-bX-vaM"/>
                                     <constraint firstAttribute="width" constant="164" id="wCy-s5-Jxr"/>
@@ -516,17 +522,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JfI-Hn-D5O"/>
+                    <connections>
+                        <outlet property="nomeGastoLabel" destination="dXz-i6-S3C" id="on9-Wr-iG2"/>
+                        <outlet property="valorGastoTextField" destination="JUg-r4-pr7" id="f0y-Jm-F2Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccr-5a-XPl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3357.971014492754" y="782.8125"/>
+            <point key="canvasLocation" x="3361" y="924"/>
         </scene>
         <!--Adicionar Conta View Controller-->
         <scene sceneID="Iuc-oM-hew">
             <objects>
                 <viewController id="xe1-l5-yRf" customClass="AdicionarContaViewController" customModule="financas_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oeX-e5-Am5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o nome do Banco" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tNZ-dZ-wJF">
@@ -578,7 +588,7 @@
             <objects>
                 <viewController id="D0b-JF-jIR" customClass="CadastroViewController" customModule="financas_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D6Q-Ni-din">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insira seu nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Yc-Jj-8PK">
@@ -633,13 +643,13 @@
                                 <rect key="frame" x="68" y="240" width="278" height="163"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-FINANCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOe-G0-Xt3">
-                                <rect key="frame" x="128" y="208" width="158" height="36"/>
+                                <rect key="frame" x="128" y="164" width="158" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UlV-yd-uiR">
-                                <rect key="frame" x="0.0" y="770" width="414" height="126"/>
+                                <rect key="frame" x="0.0" y="770" width="414" height="72"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moeda" translatesAutoresizingMaskIntoConstraints="NO" id="qeg-gi-m6k">
                                         <rect key="frame" x="161" y="-23" width="92" height="64"/>
@@ -723,8 +733,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="83D-0i-S41"/>
-        <segue reference="nqM-PM-7B5"/>
+        <segue reference="gGG-vY-pic"/>
+        <segue reference="1Tj-TY-e2I"/>
+        <segue reference="qr0-jf-x5b"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="moeda" width="4096" height="4096"/>

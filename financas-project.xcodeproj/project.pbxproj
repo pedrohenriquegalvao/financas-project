@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9601C25F28235A7500218923 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601C25E28235A7500218923 /* CadastroViewController.swift */; };
 		9601C26128235A8900218923 /* ControleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601C26028235A8900218923 /* ControleViewController.swift */; };
+		962FF7AE283D1C0000AA5617 /* GastoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962FF7AD283D1C0000AA5617 /* GastoViewController.swift */; };
 		9660A72D282A9667006F12C3 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660A72C282A9667006F12C3 /* Usuario.swift */; };
 		9660A796282A9D11006F12C3 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 9660A795282A9D11006F12C3 /* SQLite */; };
 		9660A799282A9DBA006F12C3 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660A798282A9DBA006F12C3 /* SQLiteDatabase.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		9601C25E28235A7500218923 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		9601C26028235A8900218923 /* ControleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControleViewController.swift; sourceTree = "<group>"; };
+		962FF7AD283D1C0000AA5617 /* GastoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastoViewController.swift; sourceTree = "<group>"; };
 		9660A72C282A9667006F12C3 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		9660A798282A9DBA006F12C3 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
 		9660A79B282AA0AE006F12C3 /* SQLiteCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteCommands.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				9601C25E28235A7500218923 /* CadastroViewController.swift */,
 				9601C26028235A8900218923 /* ControleViewController.swift */,
 				96EE9553282C975700B670E1 /* AdicionarContaViewController.swift */,
+				962FF7AD283D1C0000AA5617 /* GastoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				96EE954E282C939300B670E1 /* ControleAdicionarContaViewModel.swift in Sources */,
 				9601C26128235A8900218923 /* ControleViewController.swift in Sources */,
 				96EE954A282C898500B670E1 /* ContaBancaria.swift in Sources */,
+				962FF7AE283D1C0000AA5617 /* GastoViewController.swift in Sources */,
 				9687C17F281B6D1C0024724F /* SceneDelegate.swift in Sources */,
 				9601C25F28235A7500218923 /* CadastroViewController.swift in Sources */,
 				96EEF286283A9DC400056F51 /* GastoViewModel.swift in Sources */,
