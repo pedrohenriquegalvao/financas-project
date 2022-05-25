@@ -21,6 +21,8 @@ class ControleViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBOutlet weak var gastosCollectionView: UICollectionView!
     
+    @IBOutlet weak var totalGastosLabel: UILabel!
+    
     override func viewDidLoad() {
     
         super.viewDidLoad()
@@ -63,18 +65,23 @@ class ControleViewController: UIViewController, UICollectionViewDelegate, UIColl
         textoBotoes = []
         tagBotoes = []
         textoLabels = []
+        totalGastosLabel.text = ""
+        var totalMensal = 0.0
         
         for gasto in SQLiteCommands.filtraGastos(cpf: cpf ?? "") {
             textoBotoes.append(gasto[SQLiteCommands.nomeGasto])
             textoLabels.append(String(gasto[SQLiteCommands.valorGasto]))
             tagBotoes.append(gasto[SQLiteCommands.idGasto])
+            totalMensal += gasto[SQLiteCommands.valorGasto]
         }
         
-        print(tagBotoes)
         cell.image.image = UIImage(named: images[indexPath.row])
         cell.dbutton.setTitle(textoBotoes[indexPath.row], for: .normal)
         cell.dbutton.tag = tagBotoes[indexPath.row]
         cell.cellValorGasto.text = "Valor mensal: R$\(textoLabels[indexPath.row])"
+        
+        totalGastosLabel.text! += "Total de despesas fixas mensais: R$\(String(totalMensal))"
+        
         SQLiteCommands.presentRowsGasto()
         cell.addButtonTapAction = {
                     // implement your logic here, e.g. call preformSegue()

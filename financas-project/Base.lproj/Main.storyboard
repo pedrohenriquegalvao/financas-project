@@ -322,7 +322,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="prO-zz-OWx">
-                                <rect key="frame" x="66" y="432" width="282" height="298"/>
+                                <rect key="frame" x="66" y="414" width="282" height="298"/>
                                 <color key="backgroundColor" red="0.92963609039155748" green="0.93392769601531767" blue="0.946802512886598" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6C9-XI-7pH">
                                     <size key="itemSize" width="175" height="168"/>
@@ -428,15 +428,24 @@
                                     <segue destination="xe1-l5-yRf" kind="show" identifier="ControleParaAddConta" id="z6F-KH-Bca"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total de despesas fixas mensais: R$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6h-lS-19j">
+                                <rect key="frame" x="39" y="720" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pCJ-ZD-p2y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="pCJ-ZD-p2y" firstAttribute="trailing" secondItem="P6h-lS-19j" secondAttribute="trailing" constant="40" id="1qJ-6x-p5l"/>
+                            <constraint firstItem="P6h-lS-19j" firstAttribute="top" secondItem="prO-zz-OWx" secondAttribute="bottom" constant="8" symbolic="YES" id="2Df-vw-xBh"/>
                             <constraint firstItem="dHf-dN-C63" firstAttribute="trailing" secondItem="pCJ-ZD-p2y" secondAttribute="trailing" id="2Mr-wM-v6Y"/>
                             <constraint firstItem="pCJ-ZD-p2y" firstAttribute="trailing" secondItem="SDI-vC-x48" secondAttribute="trailing" constant="87" id="2vN-le-52R"/>
+                            <constraint firstItem="dHf-dN-C63" firstAttribute="top" secondItem="P6h-lS-19j" secondAttribute="bottom" constant="30" id="3hj-0e-uNN"/>
                             <constraint firstItem="iyq-sc-DjD" firstAttribute="top" secondItem="49t-pX-zJ9" secondAttribute="top" constant="806" id="A8h-OQ-Qg5"/>
                             <constraint firstItem="pCJ-ZD-p2y" firstAttribute="trailing" secondItem="ZDf-Hp-VdR" secondAttribute="trailing" constant="103" id="ALy-8i-kIA"/>
-                            <constraint firstItem="prO-zz-OWx" firstAttribute="top" secondItem="SDI-vC-x48" secondAttribute="bottom" constant="17" id="Amx-Ud-DP5"/>
+                            <constraint firstItem="prO-zz-OWx" firstAttribute="top" secondItem="SDI-vC-x48" secondAttribute="bottom" constant="-1" id="Amx-Ud-DP5"/>
                             <constraint firstItem="XaY-vO-JgS" firstAttribute="top" secondItem="ZDf-Hp-VdR" secondAttribute="bottom" constant="17" id="CGB-fc-vRR"/>
                             <constraint firstItem="eIM-ah-0hV" firstAttribute="leading" secondItem="pCJ-ZD-p2y" secondAttribute="leading" constant="66" id="Dqv-YV-v8k"/>
                             <constraint firstItem="pCJ-ZD-p2y" firstAttribute="trailing" secondItem="XaY-vO-JgS" secondAttribute="trailing" constant="147" id="EMI-FQ-QyB"/>
@@ -448,11 +457,12 @@
                             <constraint firstItem="SDI-vC-x48" firstAttribute="top" secondItem="eIM-ah-0hV" secondAttribute="bottom" constant="20" id="VxT-S3-wEv"/>
                             <constraint firstAttribute="bottom" secondItem="iyq-sc-DjD" secondAttribute="bottom" constant="-4060" id="ZZL-fs-DYj"/>
                             <constraint firstItem="iyq-sc-DjD" firstAttribute="leading" secondItem="49t-pX-zJ9" secondAttribute="leading" constant="166" id="aOl-G3-9m6"/>
+                            <constraint firstItem="P6h-lS-19j" firstAttribute="leading" secondItem="pCJ-ZD-p2y" secondAttribute="leading" constant="39" id="f0O-cB-zbx"/>
                             <constraint firstItem="ZDf-Hp-VdR" firstAttribute="top" secondItem="pCJ-ZD-p2y" secondAttribute="top" constant="58" id="fCO-gQ-HgT"/>
                             <constraint firstItem="pCJ-ZD-p2y" firstAttribute="trailing" secondItem="VTM-iV-4Jk" secondAttribute="trailing" constant="345" id="hta-Ll-h1f"/>
                             <constraint firstItem="pCJ-ZD-p2y" firstAttribute="trailing" secondItem="eIM-ah-0hV" secondAttribute="trailing" constant="66" id="igd-f1-n9l"/>
                             <constraint firstItem="dHf-dN-C63" firstAttribute="leading" secondItem="pCJ-ZD-p2y" secondAttribute="leading" id="llj-bq-R2j"/>
-                            <constraint firstItem="dHf-dN-C63" firstAttribute="top" secondItem="prO-zz-OWx" secondAttribute="bottom" constant="41" id="mZi-df-YDH"/>
+                            <constraint firstItem="dHf-dN-C63" firstAttribute="top" secondItem="prO-zz-OWx" secondAttribute="bottom" constant="59" id="mZi-df-YDH"/>
                             <constraint firstItem="pCJ-ZD-p2y" firstAttribute="trailing" secondItem="mZC-PA-jWe" secondAttribute="trailing" constant="128" id="mi0-LI-AmI"/>
                             <constraint firstAttribute="trailing" secondItem="iyq-sc-DjD" secondAttribute="trailing" constant="-3848" id="nLM-0j-OS9"/>
                             <constraint firstItem="ZDf-Hp-VdR" firstAttribute="leading" secondItem="pCJ-ZD-p2y" secondAttribute="leading" constant="102" id="oC2-Gr-VY3"/>
@@ -469,6 +479,7 @@
                         <outlet property="nomeBancoLabel" destination="ufJ-FA-Tzq" id="Tua-R3-rAF"/>
                         <outlet property="nomeLabel" destination="ZDf-Hp-VdR" id="2Rb-Lo-jal"/>
                         <outlet property="numContaLabel" destination="NGa-dG-M2K" id="ndk-UT-0tK"/>
+                        <outlet property="totalGastosLabel" destination="P6h-lS-19j" id="YVc-bf-ZvK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VqA-ON-fum" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -848,6 +859,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="z6F-KH-Bca"/>
         <segue reference="gys-WU-NVc"/>
         <segue reference="qr0-jf-x5b"/>
     </inferredMetricsTieBreakers>
