@@ -26,7 +26,7 @@ class ControleViewController: UIViewController, UICollectionViewDelegate, UIColl
         super.viewDidLoad()
         let dadosUsuario = SQLiteCommands.filtra(cpf: cpf ?? "")
         do {
-           try nomeLabel.text = dadosUsuario?.get(SQLiteCommands.nomeUsuario) ?? "Nome padrão"
+            try nomeLabel.text = "Olá, \(dadosUsuario?.get(SQLiteCommands.nomeUsuario) ?? "Nome padrão")" 
         } catch {
             print(error)
         }
