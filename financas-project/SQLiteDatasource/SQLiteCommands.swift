@@ -95,10 +95,7 @@ class SQLiteCommands {
     }
     
     static func filtra(cpf:String) -> Row? {
-        print("ALOHA")
         do {
-            print("CU")
-
             let query = SQLiteCommands.tableUsuario.filter(SQLiteCommands.cpf == cpf)
             print(query.asSQL())
             var data = try SQLiteDatabase.sharedInstance.database!.pluck(query)
@@ -114,20 +111,19 @@ class SQLiteCommands {
         
     }
     
-    static func deleteRowsUsuario(){
-        print("DELETE CHAMADO")
-        
-        guard let database = SQLiteDatabase.sharedInstance.database
-            else {
-                print("Datastore connection error")
-            return
-        }
-        
+    static func filtraNome(nome:String) -> Row? {
         do {
-            try database.run(tableUsuario.limit(3).delete())
-            print("LINHA DELETADA")
-        }catch {
-            print(error)
+            let query = SQLiteCommands.tableUsuario.filter(SQLiteCommands.nomeUsuario == nome)
+            print(query.asSQL())
+            var data = try SQLiteDatabase.sharedInstance.database!.pluck(query)
+            print(data ?? "")
+            print(try data?.get(nomeUsuario) ?? "")
+            return data
+            
+        } catch {
+            print("Get by Id Error : (error)")
+            return nil
+            
         }
         
     }
@@ -320,20 +316,33 @@ class SQLiteCommands {
             return nil
         }
         do {
-            print("Fazendo")
-            try database.run(tableGasto.insert(
-                cpfUsuarioFKG <- gasto.cpfUsuarioFKG,
-                nomeGasto <- gasto.nomeGasto,
-                valorGasto <- gasto.valorGasto
-                ))
-            return true
-        } catch let Result.error(message,code,statement) where code == SQLITE_CONSTRAINT{
-            print("1- Falha ao inserir a linha \(message) em \(String(describing: statement))")
-            return false
-        } catch let error {
-            print("2- Falha ao inserir a linha \(error)")
+            let count = try database.scalar(tableGasto.filter(gasto.cpfUsuarioFKG == cpfUsuarioFKG).count)
+            if (count <= 4) {
+                do {
+                    print("Fazendo")
+                    
+                    
+                    try database.run(tableGasto.insert(
+                        cpfUsuarioFKG <- gasto.cpfUsuarioFKG,
+                        nomeGasto <- gasto.nomeGasto,
+                        valorGasto <- gasto.valorGasto
+                        ))
+                    return true
+                } catch let Result.error(message,code,statement) where code == SQLITE_CONSTRAINT{
+                    print("1- Falha ao inserir a linha \(message) em \(String(describing: statement))")
+                    return false
+                } catch let error {
+                    print("2- Falha ao inserir a linha \(error)")
+                    return false
+                }
+            } else {
+                return false
+            }
+        } catch {
+            print(error)
             return false
         }
+        
     }
     
     static func presentRowsGasto() -> [Gasto]? {

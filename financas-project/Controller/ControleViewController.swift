@@ -37,7 +37,7 @@ class ControleViewController: UIViewController, UICollectionViewDelegate, UIColl
            try nomeBancoLabel.text = dadosConta?.get(SQLiteCommands.nomeBanco) ?? "Banco padrão"
             let numConta = SQLiteCommands.retornaNumConta(cpf: cpf ?? "")
             if (numConta == nil){
-                numContaLabel.text = "9999"
+                numContaLabel.text! += "9999"
             }else{
                 numContaLabel.text! += String(numConta!)
             }

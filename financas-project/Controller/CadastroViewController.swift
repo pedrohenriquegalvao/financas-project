@@ -22,6 +22,7 @@ class CadastroViewController: UIViewController {
         SQLiteCommands.createTable()
         nomeTextField.becomeFirstResponder()
         cpfTextField.delegate = self
+        dataNascimentoTextField.delegate = self
         SQLiteCommands.presentRows()
         
         SQLiteCommands.createTableGasto()
@@ -42,6 +43,11 @@ class CadastroViewController: UIViewController {
     @IBAction func cadastrarButton(_ sender: Any) {
         if (nomeTextField.text == "" || cpfTextField.text == "" || cpfTextField.text!.count < 14 || dataNascimentoTextField.text == "" || emailTextField.text == "" ){
             let alert = UIAlertController(title: "Erro", message: "Preencha todos os campos para cadastrar-se", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.cancel))
+            present(alert, animated: true)
+            return
+        } else if emailTextField.text?.contains("@") == false{
+            let alert = UIAlertController(title: "Erro", message: "O campo 'Email' deve possuir o caractere '@'", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.cancel))
             present(alert, animated: true)
             return
@@ -75,6 +81,7 @@ class CadastroViewController: UIViewController {
     }
     
     private func cadastrarGastos (_ cpf: String) {
+        
         let gastoFamiliaValues = Gasto(idGasto: 0, cpfUsuarioFKG: cpf, nomeGasto: "Família", valorGasto: 1000.00)
         let gastoFamiliaAdicionado = SQLiteCommands.insertRowGasto(gastoFamiliaValues)
         print("FAMILIA ADICIONADO")
@@ -123,7 +130,42 @@ extension CadastroViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else {return false}
         let newString = (text as NSString).replacingCharacters(in: range, with: string)
-        textField.text = format(with: "XXX.XXX.XXX-XX", cpf: newString)
+        
+        if textField == cpfTextField {
+            textField.text = format(with: "XXX.XXX.XXX-XX", cpf: newString)
+            
+        } else if textField == dataNascimentoTextField {
+            textField.text = format(with: "XX/XX/XXXX", cpf: newString)
+        }
+        
         return false
     }
+    
+    
+    
+    
+    
+    /*private func formatNovo (with mask: String, valor:String) -> String {
+        let numbers = valor.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        var result = ""
+        var index = numbers.startIndex
+        
+        for ch in mask where index < numbers.endIndex {
+            if ch == "X" {
+                result.append(numbers[index])
+                index = numbers.index(after: index)
+            } else {
+                result.append(ch)
+            }
+        }
+        return result
+    }
+    
+    func textFieldNovo(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else {return false}
+        let newString = (text as NSString).replacingCharacters(in: range, with: string)
+        textField.text = formatNovo(with: "XXX.XXX.XXX-XX", valor: newString)
+        return false
+    }*/
+
 }
